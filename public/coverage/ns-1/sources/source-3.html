@@ -1,0 +1,468 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > PlayerActionService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">service</a>
+</div>
+
+<h1>Coverage Summary for Class: PlayerActionService (service)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">PlayerActionService</td>
+<td class="coverageStat">
+  <span class="percent">
+    33,3%
+  </span>
+  <span class="absValue">
+    (3/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16,7%
+  </span>
+  <span class="absValue">
+    (31/186)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    36%
+  </span>
+  <span class="absValue">
+    (27/75)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    35%
+  </span>
+  <span class="absValue">
+    (251/718)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">PlayerActionService$drawCard$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/15)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PlayerActionService$playCard$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PlayerActionService$playCard$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">PlayerActionService$swapHand$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    23,1%
+  </span>
+  <span class="absValue">
+    (3/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16,3%
+  </span>
+  <span class="absValue">
+    (31/190)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    34,2%
+  </span>
+  <span class="absValue">
+    (27/79)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33,6%
+  </span>
+  <span class="absValue">
+    (251/747)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package service
+&nbsp;
+&nbsp;import entity.Card
+&nbsp;import entity.CardValue
+&nbsp;import entity.Player
+&nbsp;import kotlin.math.min
+&nbsp;
+&nbsp;/**
+&nbsp; * class to control the player action like play a card, draw card and swap card.
+&nbsp; */
+<b class="fc">&nbsp;class PlayerActionService(private var rootService: RootService) : AbstractRefreshingService() {</b>
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Attempts to play a card from the player&#39;s hand onto the target central stack.
+&nbsp;     * the player can only play card if he did not make another action.
+&nbsp;     * @param card The card to be played.
+&nbsp;     * @param targetStack The central stack where the card should be placed.
+&nbsp;     * @throws IllegalStateException when game is not running
+&nbsp;     */
+&nbsp;    fun playCard(card: Card, targetStack: Int) {
+<b class="pc">&nbsp;        checkNotNull(rootService.currentGame){throw IllegalStateException(&quot;game is not running!.&quot;)}</b>
+&nbsp;
+&nbsp;        //determine which player play.
+<b class="fc">&nbsp;        val currentPlayer: Player? = rootService.gameService.currentPlayer()</b>
+&nbsp;        //check if the player already did any action.
+<b class="pc">&nbsp;        if (rootService.currentGame?.playerAction == false){</b>
+<b class="pc">&nbsp;            if(targetStack == 1 &amp;&amp; canPlayCard(card, rootService.currentGame?.playStackOne?.first())){</b>
+<b class="pc">&nbsp;                rootService.currentGame?.playStackOne?.addFirst(card)</b>
+<b class="pc">&nbsp;                currentPlayer?.handCards?.remove(card)</b>
+&nbsp;                //remark that player did action, so he can not do another action
+<b class="pc">&nbsp;                rootService.currentGame?.playerAction = true</b>
+<b class="pc">&nbsp;                rootService.currentGame?.lastSkip = false</b>
+<b class="pc">&nbsp;                onAllRefreshables { refreshAfterPlayCard(card, targetStack) }</b>
+<b class="pc">&nbsp;            }else if (targetStack == 2 &amp;&amp; canPlayCard(card, rootService.currentGame?.playStackTwo?.first())){</b>
+<b class="pc">&nbsp;                rootService.currentGame?.playStackTwo?.addFirst(card)</b>
+<b class="pc">&nbsp;                currentPlayer?.handCards?.remove(card)</b>
+<b class="pc">&nbsp;                rootService.currentGame?.playerAction = true</b>
+<b class="pc">&nbsp;                rootService.currentGame?.lastSkip = false</b>
+<b class="pc">&nbsp;                onAllRefreshables { refreshAfterPlayCard(card, targetStack) }</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Allows the player to draw one card from their draw stack if conditions are met.
+&nbsp;     * A player can draw a card if they have fewer than 10 cards in hand and the draw stack is not empty.
+&nbsp;     * @throws IllegalStateException if the game is not running.
+&nbsp;     */
+&nbsp;    fun drawCard() {
+&nbsp;
+<b class="nc">&nbsp;        checkNotNull(rootService.currentGame){throw IllegalStateException(&quot;game is not running!.&quot;)}</b>
+&nbsp;
+<b class="nc">&nbsp;        val currentPlayer : Player? = rootService.gameService.currentPlayer()</b>
+<b class="nc">&nbsp;        if (canDrawCard() &amp;&amp; rootService.currentGame?.playerAction == false) {</b>
+&nbsp;            /* first card will be removed and returned as input for handCards */
+<b class="nc">&nbsp;            currentPlayer?.handCards?.addLast(currentPlayer.drawStack.removeLast())</b>
+<b class="nc">&nbsp;            rootService.currentGame?.lastSkip = false</b>
+<b class="nc">&nbsp;            rootService.currentGame?.playerAction = true</b>
+&nbsp;
+&nbsp;            //the last card in the hand of the player is the card the drawn.
+<b class="nc">&nbsp;            onAllRefreshables { currentPlayer?.handCards?.let { refreshAfterDraw(it.last()) } }</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Replaces the player&#39;s hand cards by shuffling the draw stack and give player 5 new cards.
+&nbsp;     * This action is allowed if the player has at least 8 cards in hand and the draw stack is not empty.
+&nbsp;     * @throws IllegalStateException when no game runs.
+&nbsp;     */
+&nbsp;    fun swapHand(){
+<b class="nc">&nbsp;        checkNotNull(rootService.currentGame){throw IllegalStateException(&quot;game is not running!.&quot;)}</b>
+&nbsp;
+<b class="nc">&nbsp;        val currentPlayer : Player? = rootService.gameService.currentPlayer()</b>
+<b class="nc">&nbsp;        if (canSwapHand() &amp;&amp; rootService.currentGame?.playerAction == false) {</b>
+&nbsp;            // Merge current hand cards into the draw stack and remove them from handStack.
+<b class="nc">&nbsp;            currentPlayer?.drawStack?.addAll(currentPlayer.handCards)</b>
+<b class="nc">&nbsp;            currentPlayer?.handCards?.clear()</b>
+&nbsp;
+&nbsp;            // Shuffle the draw stack.
+<b class="nc">&nbsp;            currentPlayer?.drawStack?.shuffle()</b>
+&nbsp;            // Draw 5 new cards, or as many as available if fewer than 5.
+<b class="nc">&nbsp;            val drawCount = currentPlayer?.drawStack?.size?.let { min(5, it) }</b>
+&nbsp;
+&nbsp;            //repeat instead of For-loop
+<b class="nc">&nbsp;            if (drawCount != null) {</b>
+<b class="nc">&nbsp;                repeat(drawCount) {</b>
+<b class="nc">&nbsp;                    currentPlayer.handCards.addLast(currentPlayer.drawStack.removeFirst())</b>
+<b class="nc">&nbsp;                }</b>
+&nbsp;            }
+<b class="nc">&nbsp;            rootService.currentGame?.lastSkip = false</b>
+<b class="nc">&nbsp;            rootService.currentGame?.playerAction = true</b>
+<b class="nc">&nbsp;            onAllRefreshables { refreshAfterSwapHand() }</b>
+&nbsp;
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     *[Player] can skip his turn if no other action  is not possible.
+&nbsp;     * lastSkip will be after this methode true.
+&nbsp;     * when player make any action, it will be set to false.
+&nbsp;     */
+&nbsp;    fun skipTurn() {
+&nbsp;        //if both player skipp, game end.
+<b class="nc">&nbsp;        if (rootService.currentGame?.lastSkip == true &amp;&amp; rootService.currentGame?.playerAction == false &amp;&amp; canSkip()){</b>
+<b class="nc">&nbsp;            rootService.gameService.endGame()</b>
+&nbsp;            return
+&nbsp;        }
+<b class="nc">&nbsp;        if (canSkip()){</b>
+<b class="nc">&nbsp;            this.rootService.gameService.endTurn()</b>
+<b class="nc">&nbsp;            rootService.currentGame?.lastSkip = true</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     *check if no other action not possible.
+&nbsp;     * Other action can play a card , swap hand or draw card.
+&nbsp;     * @return true if player can skip.
+&nbsp;     */
+&nbsp;    fun canSkip(): Boolean{
+<b class="nc">&nbsp;        val currentPlayer : Player? = rootService.gameService.currentPlayer()</b>
+<b class="nc">&nbsp;        return !(canSwapHand() || canDrawCard() || (currentPlayer?.handCards?.size == 0))</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Validates if the card to play can be placed on top of the current top card of the target stack.
+&nbsp;     * Rules:
+&nbsp;     * Standard move: card value must be one rank higher or lower.
+&nbsp;     * If the same suit is played, a move of two ranks higher or lower is also allowed.
+&nbsp;     * @param cardToPlay the card which will the player play.
+&nbsp;     * @param topCard the top card in the central playStack.
+&nbsp;     */
+&nbsp;    private fun canPlayCard(cardToPlay: Card?, topCard: Card?): Boolean {
+<b class="pc">&nbsp;        if (topCard == null) return true</b>
+&nbsp;
+<b class="fc">&nbsp;        val cardOrder = listOf(</b>
+<b class="fc">&nbsp;            CardValue.TWO, CardValue.THREE, CardValue.FOUR, CardValue.FIVE,</b>
+<b class="fc">&nbsp;            CardValue.SIX, CardValue.SEVEN, CardValue.EIGHT, CardValue.NINE,</b>
+<b class="fc">&nbsp;            CardValue.TEN, CardValue.JACK, CardValue.QUEEN, CardValue.KING, CardValue.ACE</b>
+&nbsp;        )
+<b class="fc">&nbsp;        val indexTop = cardOrder.indexOf(topCard.cardValue)</b>
+<b class="pc">&nbsp;        val indexPlay = cardToPlay?.let { cardOrder.indexOf(it.cardValue) }</b>
+&nbsp;
+&nbsp;        // Check for standard one-rank move
+<b class="pc">&nbsp;        if (cardToPlay != null) {</b>
+<b class="pc">&nbsp;            if (cardToPlay.cardSuit != topCard.cardSuit) {</b>
+<b class="pc">&nbsp;                if ((indexPlay == (indexTop + 1) % cardOrder.size) ||</b>
+<b class="nc">&nbsp;                    (indexPlay == (indexTop - 1 + cardOrder.size) % cardOrder.size)) {</b>
+<b class="fc">&nbsp;                    return true</b>
+&nbsp;                }
+&nbsp;            } else {
+&nbsp;                // For the same suit, two-rank moves are allowed in addition to one-rank moves.
+<b class="nc">&nbsp;                if ((indexPlay == (indexTop + 2) % cardOrder.size) ||</b>
+<b class="nc">&nbsp;                    (indexPlay == (indexTop - 2 + cardOrder.size) % cardOrder.size)) {</b>
+<b class="nc">&nbsp;                    return true</b>
+&nbsp;                }
+<b class="nc">&nbsp;                if ((indexPlay == (indexTop + 1) % cardOrder.size) ||</b>
+<b class="nc">&nbsp;                    (indexPlay == (indexTop - 1 + cardOrder.size) % cardOrder.size)) {</b>
+<b class="nc">&nbsp;                    return true</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return false</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * check if player can draw one card from his drawCard
+&nbsp;     * @return true if currentPlayer can draw a [Card], false otherwise.
+&nbsp;     */
+&nbsp;    fun canDrawCard(): Boolean {
+&nbsp;
+<b class="nc">&nbsp;        val currentPlayer : Player? = rootService.gameService.currentPlayer()</b>
+<b class="nc">&nbsp;        val handCardSize = currentPlayer?.handCards?.size</b>
+<b class="nc">&nbsp;        if (handCardSize != null) {</b>
+<b class="nc">&nbsp;            return handCardSize &lt; 10 &amp;&amp;</b>
+<b class="nc">&nbsp;                    currentPlayer.drawStack.isNotEmpty()</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return false</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     *Checks whether cards in hand can be swapped (replace cards in hand)
+&nbsp;     * this means that the cards in hand are shuffled into the drawStack and the player
+&nbsp;     * then become 5 new cards from this pile.
+&nbsp;     * @return true if the currentPlayer have min 8 cards and the drawStack is not empty.
+&nbsp;     */
+&nbsp;    fun canSwapHand(): Boolean {
+&nbsp;        //first check which player play, then make the action.
+<b class="nc">&nbsp;        val currentPlayer : Player? = rootService.gameService.currentPlayer()</b>
+<b class="nc">&nbsp;        val handCardSize = currentPlayer?.handCards?.size</b>
+<b class="nc">&nbsp;        if (handCardSize != null) {</b>
+<b class="nc">&nbsp;            return (handCardSize &gt;= 8  &amp;&amp;</b>
+<b class="nc">&nbsp;                    currentPlayer.drawStack.isNotEmpty())</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return false</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-03-02 23:59</div>
+</div>
+</body>
+</html>
